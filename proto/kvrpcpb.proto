@@ -328,7 +328,7 @@ message RawScanResponse {
 message RawBatchScanRequest {
     Context context = 1;
     repeated bytes start_keys = 2;
-    uint32 start_key_limit = 3;
+    uint32 each_limit = 3;
     bool key_only = 4;
 }
 
