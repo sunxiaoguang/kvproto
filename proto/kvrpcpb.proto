@@ -325,12 +325,16 @@ message RawScanResponse {
     repeated KvPair kvs = 2;
 }
 
+message KeyRange {
+  bytes start_key = 1;
+  bytes end_key = 2;
+}
+
 message RawBatchScanRequest {
     Context context = 1;
-    repeated bytes start_keys = 2; // start keys for each scanning range
-    repeated bytes end_keys = 3; // optional end keys for each scaning range
-    uint32 each_limit = 4; // max number of returning kv pairs for each scanning range
-    bool key_only = 5;
+    repeated KeyRange ranges = 2; // scanning range
+    uint32 each_limit = 3; // max number of returning kv pairs for each scanning range
+    bool key_only = 4;
 }
 
 message RawBatchScanResponse {
