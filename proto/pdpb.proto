@@ -143,6 +143,8 @@ message BootstrapResponse {
 
 message IsBootstrappedRequest {
     RequestHeader header = 1;
+
+    BootstrapFeature feature = 2;
 }
 
 message IsBootstrappedResponse {
