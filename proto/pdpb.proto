@@ -130,11 +130,17 @@ message TsoResponse {
     Timestamp timestamp = 3;
 }
 
+message BootstrapFeature {
+    bool safe_rawkv = 1;
+}
+
 message BootstrapRequest {
     RequestHeader header = 1;
 
     metapb.Store store = 2;
     metapb.Region region = 3;
+
+    BootstrapFeature feature = 4;
 }
 
 message BootstrapResponse {
@@ -184,6 +190,7 @@ message PutStoreRequest {
 message PutStoreResponse {
     ResponseHeader header = 1;
     replication_modepb.ReplicationStatus replication_status = 2;
+    BootstrapFeature feature = 3;
 }
 
 message GetAllStoresRequest {
