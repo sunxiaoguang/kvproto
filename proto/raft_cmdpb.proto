@@ -316,6 +316,8 @@ message RaftRequestHeader {
 
     // Custom flags for this raft request.
     uint64 flags = 10;
+
+    bool force_local_read = 11;
 }
 
 message RaftResponseHeader {
